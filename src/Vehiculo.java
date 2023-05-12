@@ -90,8 +90,7 @@ public class Vehiculo {
     }
 
     public void setHour() {
-        do
-        System.out.println("ingrese");
+
     }
 
 }
