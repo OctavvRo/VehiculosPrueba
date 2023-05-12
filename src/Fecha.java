@@ -31,7 +31,11 @@ public class Fecha {
 
         if(month==2){
             
-            
+            do {
+                System.out.println("Ingresa el día");
+                this.day = entrada.nextInt();
+            if (this.day<1 || this.day>29) System.out.println("Has ingresado un dato incorrecto");
+            }while (this.day<1 || this.day>29);
 
 
         } else if (month==3 || month==6 || month==8 || month==10 || month==12) {
@@ -43,9 +47,40 @@ public class Fecha {
             }while(day<1 || day>30);
 
 
+        }else{
+            do {
+                System.out.println("Ingresa el día: ");
+                this.day = entrada.nextInt();
+                if (day<1 || this.day>31) System.out.println("Has ingresado un valor incorrecto, intentalo de nuevo");
+            }while (day<1 || this.day>31);
+
+
         }
 
 
     }
+    public void setHour(){
+        do {
+            System.out.println("Ingresa la hora: ");
+            this.hour = entrada.nextInt();
+        }while(hour<1 || hour>23);
 
+
+    }
+    public void setMinute(){
+        do {
+            System.out.println("Ingresa la hora: ");
+            this.minute = entrada.nextInt();
+        }while(minute<1 || minute>59);
+
+
+    }
+    public void setHour(){
+        do {
+            System.out.println("Ingresa la hora: ");
+            this.hour = entrada.nextInt();
+        }while(hour<1 || hour>23);
+
+
+    }
 }
