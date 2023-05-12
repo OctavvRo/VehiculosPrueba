@@ -75,7 +75,7 @@ public class Fecha {
 
 
     }
-    public void setHour(){
+    public void setSecond(){
         do {
             System.out.println("Ingresa la hora: ");
             this.hour = entrada.nextInt();
