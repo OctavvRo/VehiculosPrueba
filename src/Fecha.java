@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.time.LocalDate;
 public class Fecha {
     private int year;
     private int month;
@@ -7,6 +7,7 @@ public class Fecha {
     private int hour;
     private int minute;
     private int second;
+    private LocalDate fecha;
 
     Scanner entrada = new Scanner(System.in);
     public void setYear() {
@@ -34,13 +35,15 @@ public class Fecha {
             do {
                 System.out.println("Ingresa el día");
                 this.day = entrada.nextInt();
-            if (this.day<1 || this.day>29) System.out.println("Has ingresado un dato incorrecto");
+                if (this.day<1 || this.day>29) System.out.println("Has ingresado un dato incorrecto");
+
             }while (this.day<1 || this.day>29);
 
 
         } else if (month==3 || month==6 || month==8 || month==10 || month==12) {
             do {
                 System.out.println("Ingresa el día:");
+                this.day = entrada.nextInt();
                 if ((day<1 || day>30)){
                     System.out.println("Haz ingresado un valor incorrecto, intentalo de nuevo");
                 }
@@ -49,10 +52,16 @@ public class Fecha {
 
         }else{
             do {
+
                 System.out.println("Ingresa el día: ");
+
                 this.day = entrada.nextInt();
-                if (day<1 || this.day>31) System.out.println("Has ingresado un valor incorrecto, intentalo de nuevo");
-            }while (day<1 || this.day>31);
+
+                if (this.day<1 || this.day>31){
+                    System.out.println("Has ingresado un valor incorrecto, intentalo de nuevo");
+                }
+
+            }while (this.day<1 || this.day>31);
 
 
         }
@@ -63,24 +72,42 @@ public class Fecha {
         do {
             System.out.println("Ingresa la hora: ");
             this.hour = entrada.nextInt();
+            if(this.hour<0 || this.hour>59){
+
+                System.out.println("Has ingresado un valor incorrecto, intentalo de nuevo: ");
+            }
         }while(hour<1 || hour>23);
 
 
     }
     public void setMinute(){
         do {
-            System.out.println("Ingresa la hora: ");
+            System.out.println("Ingresa los minutos: ");
             this.minute = entrada.nextInt();
+            if(minute<0 || minute>59){
+
+                System.out.println("Has ingresado un valor incorrecto, intentalo de nuevo: ");
+            }
         }while(minute<1 || minute>59);
 
 
     }
     public void setSecond(){
         do {
-            System.out.println("Ingresa la hora: ");
+            System.out.println("Ingresa los segundos: ");
             this.hour = entrada.nextInt();
-        }while(hour<1 || hour>23);
+            if(second<0 || second>59){
+
+                System.out.println("Has ingresado un valor incorrecto, intentalo de nuevo: ");
+            }
+        }while(second<0 || second>59);
 
 
     }
+
+    public void aStringUniversal(){
+            //return String.format("%02d:%02d:%02d %s",( ( this.hour == 0 || this.hour == 12 ) ? 12 : this.hour % 12 ), this.minute, this.second, ( this.hour < 12 ? "AM" : "PM" ));
+        fecha = LocalDate.of(this.year, this.month, this.day);
+        }
+
 }

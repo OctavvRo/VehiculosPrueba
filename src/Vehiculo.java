@@ -60,38 +60,11 @@ public class Vehiculo {
 
     }
 
-    public void establecerTiempo(){
-        //validate hour, minute and second
-
-        if ((hour >= 0 && hour < 24)&&(minute >= 0 && minute < 60)&&( second>=0 && second < 60)){
-            this.hour = hour;
-            this.minute = minute;
-            this.second= second;
 
 
-        }else
-            throw new IllegalArgumentException("hora, minuto y/o segundo estaban fuera de tiempo");
-        //fin del método establecerTiempo
 
 
-    }
 
-    public String aStringUniversal(){
-        return String.format("%d:%02d:%02d %s",( ( hour == 0 || hour == 12 ) ? 12 : hour % 12 ), minute, second, ( hour < 12 ? "AM" : "PM" ));
-
-    }
-    public void establecerValores(){
-
-        do {
-            System.out.println("Ingresa la hora:");
-            hour = entrada.nextInt();
-        }while ( (hour<=0 || hour>23) || (minute<0 || minute>59)||(second<0 || second>59) );
-
-    }
-
-    public void setHour() {
-
-    }
 
 }
 
