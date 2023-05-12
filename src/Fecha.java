@@ -29,9 +29,18 @@ public class Fecha {
     }
     public void setDay(){
 
-        switch(this.month){
+        if(month==2){
+            
+            
 
-            case 1: break;
+
+        } else if (month==3 || month==6 || month==8 || month==10 || month==12) {
+            do {
+                System.out.println("Ingresa el día:");
+                if ((day<1 || day>30)){
+                    System.out.println("Haz ingresado un valor incorrecto, intentalo de nuevo");
+                }
+            }while(day<1 || day>30);
 
 
         }
