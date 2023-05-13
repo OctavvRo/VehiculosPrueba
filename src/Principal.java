@@ -6,11 +6,13 @@ public class Principal {
 
 
         Fecha f1 = new Fecha();
-    //f1.setYear();
-        //f1.setMonth();
-        //f1.setDay();
+        f1.setYear();
+        f1.setMonth();
+        f1.setDay();
         f1.setHour();
         f1.setMinute();
         f1.setSecond();
+        f1.formatoDeFecha();
+
     }}
 

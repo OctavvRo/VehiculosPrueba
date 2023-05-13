@@ -95,7 +95,7 @@ public class Fecha {
     public void setSecond(){
         do {
             System.out.println("Ingresa los segundos: ");
-            this.hour = entrada.nextInt();
+            this.second = entrada.nextInt();
             if(second<0 || second>59){
 
                 System.out.println("Has ingresado un valor incorrecto, intentalo de nuevo: ");
@@ -104,10 +104,12 @@ public class Fecha {
 
 
     }
+    public void formatoDeFecha(){
+        String fechaFormateada = String.format("%d/%d/%d", this.year, this.month, this.day);
+        System.out.println(fechaFormateada);
+        String horaFormateada = String.format(" %d:%d:%d", this.hour, this.minute, this.second);
+        System.out.println("horaFormateada = " + horaFormateada);
+    }
 
-    public void aStringUniversal(){
-            //return String.format("%02d:%02d:%02d %s",( ( this.hour == 0 || this.hour == 12 ) ? 12 : this.hour % 12 ), this.minute, this.second, ( this.hour < 12 ? "AM" : "PM" ));
-        fecha = LocalDate.of(this.year, this.month, this.day);
-        }
 
 }
